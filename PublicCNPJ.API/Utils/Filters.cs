@@ -2,18 +2,14 @@
 
 public static class Filters
 {
-    private static List<string> filter = new List<string>() { "-", "/", "." };
-
     public static bool TryFilter(this string text, out string filteredText)
     {
-        string result = text;
+        filteredText = new string(text
+            ?.Trim()
+            ?.Where(c => char.IsDigit(c))
+            ?.ToArray());
 
-        if (text.Any(c => filter.Contains(c.ToString())))
-            result = new string(text?.Where(c => !filter.Contains(c.ToString())).ToArray());
-
-        filteredText = result;
-
-        return !string.IsNullOrEmpty(filteredText);
+        return filteredText?.Length == 14;
     }
 
     public static bool TryFilter(this IEnumerable<string> texts, out IEnumerable<string> filteredTexts)

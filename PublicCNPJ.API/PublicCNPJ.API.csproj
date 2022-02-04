@@ -4,10 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c61a5d3d-c8c5-45cd-9a6b-81bd73b5ea6e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="SQLitePCLRaw.core" Version="2.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />

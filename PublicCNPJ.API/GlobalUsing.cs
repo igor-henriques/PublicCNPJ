@@ -9,3 +9,4 @@ global using PublicCNPJ.API.Utils;
 global using PublicCNPJ.API.Endpoints;
 global using PublicCNPJ.API.Services;
 global using System.Data.SQLite;
+global using Microsoft.AspNetCore.Mvc;

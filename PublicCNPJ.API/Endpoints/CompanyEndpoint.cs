@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace PublicCNPJ.API.Endpoints;
+﻿namespace PublicCNPJ.API.Endpoints;
 
 public static class CompanyEndpoint
 {
     public static void MapCompanyEndpoints(this WebApplication app)
     {
-        app.MapGet("/getcompany", async ([FromServices] ICompanyService service, 
-            [FromQuery] string cnpj) => await GetCompany(service, cnpj));
+        app.MapGet("/getcompany", 
+            async ([FromServices] ICompanyService service,[FromQuery] string cnpj) 
+                => await GetCompany(service, cnpj));
 
-        app.MapPost("/getcompanies", async([FromServices] ICompanyService service, 
-            [FromBody] IEnumerable<string> cnpjs) => await GetCompanies(service, cnpjs));
+        app.MapPost("/getcompanies", 
+            async([FromServices] ICompanyService service, [FromBody] IEnumerable<string> cnpjs) 
+                => await GetCompanies(service, cnpjs));
     }
 
     private async static Task<IResult> GetCompanies(ICompanyService service, IEnumerable<string> cnpjs)
